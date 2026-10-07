@@ -47,12 +47,12 @@
       #vista-movil { display: none; }
     }
   </style>
+  <link rel="stylesheet" href="animations.css"/>
 </head>
 <body>
 
 <div id="vista-escritorio" class="view-desktop bg-neutralGray-50 text-neutralGray-800 font-sans antialiased min-h-screen flex flex-col selection:bg-olive-700 selection:text-white">
 
-  <!-- TOP MILITARY HONOR BAR -->
   <div class="bg-olive-900 text-white/90 text-xs py-2 px-6 border-b border-olive-800">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
       <div class="flex items-center gap-2 font-medium tracking-wider">
@@ -116,7 +116,6 @@
           
           <!-- CONTENIDO TEXTO -->
           <div class="lg:col-span-7 space-y-6">
-            <!-- INSIGNIA GOOGLE RATING 5.0 -->
             <div class="inline-flex items-center gap-3 bg-white border border-neutralGray-200 px-4 py-2 rounded-full shadow-sm">
               <div class="flex text-amber-500 text-sm">
                 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -154,7 +153,6 @@
               </a>
             </div>
 
-            <!-- GARANTÍAS BREVES -->
             <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutralGray-200 text-xs text-neutralGray-600 font-medium">
               <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-olive-700 text-[18px]">verified_user</span>
@@ -201,7 +199,6 @@
           <span class="material-symbols-outlined text-[16px]">military_tech</span>
           <span>Sobre el Doctor</span>
         </div>
-        <!-- TEXTO CONCISO DE 2 LÍNEAS QUE INCORPORA LOS 23 AÑOS DE EXPERIENCIA -->
         <p class="text-xl md:text-2xl font-serifTitle text-olive-900 font-semibold leading-snug">
           Cirujano Dentista Militar con experiencia médica y odontológica.<br class="hidden md:inline"/>
           Comprometido con la precisión quirúrgica, la calidez humana y la total honestidad en cada procedimiento.
@@ -209,13 +206,12 @@
       </div>
     </section>
 
-    <!-- 3. SECCIÓN SERVICIOS EN ÍCONOS (SIN PRECIOS, ICONOS EN VEZ DE TEXTO LARGO) -->
     <section id="servicios" class="py-16 bg-neutralGray-50 border-b border-neutralGray-200">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <span class="text-xs font-bold text-olive-600 uppercase tracking-widest block mb-2">Procedimientos Clínicos</span>
           <h2 class="font-serifTitle text-3xl font-bold text-olive-900">Servicios Odontológicos</h2>
-          <p class="text-neutralGray-600 text-sm mt-2">Atención profesional con instrumental esterilizado.</p>
+          <p class="text-neutralGray-600 text-sm mt-2">Atención profesional y cuidadosa.</p>
         </div>
 
         <!-- GRID DE 4 SERVICIOS EN ÍCONOS -->
@@ -251,7 +247,7 @@
           <!-- 4. Prótesis -->
           <div class="bg-white p-8 rounded-xl border border-neutralGray-200 shadow-sm hover:shadow-md hover:border-olive-600 transition-all text-center flex flex-col items-center group">
             <div class="w-16 h-16 rounded-2xl bg-olive-50 flex items-center justify-center text-olive-800 mb-5 group-hover:bg-olive-800 group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined text-[32px]">prosthetics</span>
+              <span class="material-symbols-outlined text-[32px]">dentistry</span>
             </div>
             <h3 class="font-bold text-lg text-olive-900 mb-2">Prótesis</h3>
             <p class="text-xs text-neutralGray-600 leading-relaxed">Rehabilitación bucal funcional, prótesis fijas y removibles a la medida.</p>
@@ -261,7 +257,6 @@
       </div>
     </section>
 
-    <!-- 4. SECCIÓN RESEÑAS REALES (SOLO RESEÑAS POSITIVAS EXACTAS) -->
     <section id="resenas" class="py-16 bg-white border-b border-neutralGray-200">
       <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -281,7 +276,6 @@
           </div>
         </div>
 
-        <!-- 3 TARJETAS DE RESEÑAS REALES VERIFICADAS -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           <!-- RESEÑA 1 -->
@@ -528,7 +522,6 @@
       <h1 class="font-serifTitle text-2xl font-bold text-olive-900 mb-0.5">Dr. Leonardo</h1>
       <p class="text-xs font-bold text-olive-700 uppercase tracking-widest mb-3">Cirujano Dentista Militar · CDEM</p>
 
-      <!-- VALORACIÓN 5.0 (15 RESEÑAS EN GOOGLE) -->
       <div class="inline-flex items-center gap-1.5 bg-white border border-neutralGray-200 px-3 py-1.5 rounded-full shadow-sm mb-5">
         <div class="flex text-amber-500 text-xs">
           <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -559,7 +552,6 @@
       </div>
     </section>
 
-    <!-- 3. SERVICIOS EN ÍCONOS (SIN PRECIOS) -->
     <section class="px-5">
       <div class="mb-3">
         <span class="text-[10px] font-bold text-olive-600 uppercase tracking-widest block">Tratamientos</span>
@@ -597,7 +589,7 @@
         <!-- Prótesis -->
         <div class="bg-white p-4 rounded-xl border border-neutralGray-200 text-center flex flex-col items-center shadow-sm">
           <div class="w-12 h-12 rounded-xl bg-olive-50 flex items-center justify-center text-olive-800 mb-2">
-            <span class="material-symbols-outlined text-[26px]">prosthetics</span>
+            <span class="material-symbols-outlined text-[26px]">dentistry</span>
           </div>
           <span class="font-bold text-xs text-olive-900">Prótesis</span>
           <span class="text-[10px] text-neutralGray-600 mt-0.5">Rehabilitación bucal</span>
@@ -605,7 +597,6 @@
       </div>
     </section>
 
-    <!-- 4. RESEÑAS REALES (SOLO RESEÑAS EXACTAS) -->
     <section class="px-5">
       <div class="mb-3">
         <span class="text-[10px] font-bold text-olive-600 uppercase tracking-widest block">Testimonios Google</span>
@@ -736,5 +727,6 @@
 
 </div>
 
+<script src="animations.js" defer></script>
 </body>
 </html>

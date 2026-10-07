@@ -1,0 +1,106 @@
+/* CDEM - animaciones sobrias. Todo cuelga de html.anim-on, que solo agrega
+   animations.js (sin ?captura=1 y sin prefers-reduced-motion). Sin esa clase
+   el sitio se ve exactamente como el diseño base. Solo transform y opacity,
+   salvo la sombra del hover de botones y tarjetas. */
+
+/* Anclajes: el header de escritorio es sticky (h-20 = 80px) */
+section[id]:not(#inicio) { scroll-margin-top: 80px; }
+@media (prefers-reduced-motion: no-preference) {
+  html.anim-on { scroll-behavior: smooth; }
+}
+
+/* Transiciones base de hover (van antes de las de reveal para que estas ganen mientras el elemento aparece) */
+@media (hover: hover) {
+  html.anim-on [data-btn] {
+    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease, border-color .3s ease, color .3s ease;
+  }
+}
+@media (hover: hover) and (min-width: 768px) {
+  html.anim-on [data-hover] {
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, background-color .3s ease, color .3s ease;
+  }
+}
+
+/* Aparición (hero al cargar y secciones al hacer scroll) */
+/* El estado oculto se aplica SIN transición (anim-on); las transiciones se
+   activan después con anim-ready, para que el elemento no "desvanezca" hacia
+   oculto y luego reaparezca. */
+html.anim-on [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--ry, 20px));
+  transition: none;
+}
+html.anim-ready [data-reveal] {
+  transition: opacity var(--rd, .6s) cubic-bezier(.22, .61, .36, 1) var(--d, 0ms),
+              transform var(--rd, .6s) cubic-bezier(.22, .61, .36, 1) var(--d, 0ms);
+  will-change: opacity, transform;
+}
+html.anim-on [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Estrellas: una por una */
+html.anim-on [data-stars] > .material-symbols-outlined {
+  opacity: 0;
+  transform: scale(.6);
+  transition: none;
+}
+html.anim-ready [data-stars] > .material-symbols-outlined {
+  transition: opacity .3s ease calc(var(--sd, 0ms) + var(--i, 0) * 70ms),
+              transform .3s ease calc(var(--sd, 0ms) + var(--i, 0) * 70ms);
+}
+html.anim-on [data-stars].is-visible > .material-symbols-outlined {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover (solo dispositivos con puntero) */
+@media (hover: hover) {
+  html.anim-on [data-btn]:hover:not(:active) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px -8px rgba(27, 38, 28, .45);
+  }
+}
+@media (hover: hover) and (min-width: 768px) {
+  html.anim-on [data-hover]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px -14px rgba(27, 38, 28, .3);
+  }
+}
+
+/* Pulso suave del botón de cita en móvil: 3 ciclos y se detiene */
+@keyframes cdem-pulse {
+  0%   { transform: scale(1);          opacity: .5; }
+  100% { transform: scale(1.08, 1.28); opacity: 0; }
+}
+html.anim-on [data-pulse] { position: relative; }
+html.anim-on [data-pulse]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #3D543E;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  animation: cdem-pulse 1.6s ease-out 1.8s 3;
+}
+
+/* Salvaguardas */
+@media (prefers-reduced-motion: reduce) {
+  html.anim-on [data-reveal],
+  html.anim-on [data-stars] > .material-symbols-outlined {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html.anim-on [data-pulse]::after { animation: none !important; }
+  html.anim-on { scroll-behavior: auto; }
+}
+@media print {
+  html.anim-on [data-reveal],
+  html.anim-on [data-stars] > .material-symbols-outlined {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
